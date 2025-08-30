@@ -13,7 +13,6 @@ import Testimonials from "@/components/Testimonials";
 import Video from "@/components/Video";
 import { Metadata } from "next";
 import UpcomingWebinars from "@/components/UpcomingWebinars";
-import { getArticles } from "@/sanity/client";
 
 export const metadata: Metadata = {
   title: "Legal Chautari",
@@ -21,9 +20,10 @@ export const metadata: Metadata = {
   // other metadata
 };
 
+export const revalidate = 0;
+
 export default async function Home() {
 
-  const posts = await getArticles();
   return (
     <>
       <ScrollUp />
