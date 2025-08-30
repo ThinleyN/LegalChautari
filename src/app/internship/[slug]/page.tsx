@@ -3,3 +3,5 @@ const InternshipPage = () => {
         <div>Loading...</div>
     )
 }
+
+export default InternshipPage;
