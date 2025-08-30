@@ -1,0 +1,23 @@
+import { Article } from "@/types/sanityTypes";
+import SanityImage from "../atoms/SanityImage";
+import Link from "next/link";
+
+
+interface ArticleProps {
+    data: Article
+}
+
+const ArticlePreview: React.FC<ArticleProps> = ({ data }) => {
+    const {_id, title, body, image, excerpt, slug} = data;
+    return (
+        <Link href={`/article/${slug?.current}`} className="w-1/3 group duration-300 transition-all hover:scale-[1.02] cursor-pointer">
+            <div className="h-72 w-full relative">
+                <SanityImage src={image} alt={title}/>
+            </div>
+            <h2 className="my-2 font-bold text-2xl group-hover:underline">{title}</h2>
+            <span className="text-gray">{excerpt}</span>
+        </Link>
+    );
+};
+
+export default ArticlePreview;
