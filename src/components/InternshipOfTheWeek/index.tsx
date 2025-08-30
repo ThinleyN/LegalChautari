@@ -1,6 +1,8 @@
 import { getInternships } from '@/sanity/client';
 import InternshipPreview from '../atoms/InternshipPreview';
 
+export const revalidate = 0;
+
 const InternshipOfTheWeek = async() => {
     const internships = await getInternships();
     console.log(internships, "inter")

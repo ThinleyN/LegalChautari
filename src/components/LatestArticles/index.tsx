@@ -1,6 +1,8 @@
 import ArticlePreview from '@/components/ArticlePreview';
 import { getArticles } from '@/sanity/client';
 
+export const revalidate = 0;
+
 const LatestArticles = async () => {
     const fetchedArticles = await getArticles();
     return (
