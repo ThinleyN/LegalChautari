@@ -10,7 +10,7 @@ const InternshipOfTheWeek = async() => {
                 Intership of the Week
             </h2>
             <hr className='mb-5'></hr>
-            <div className='flex gap-8 mt-2'>
+            <div className='flex flex-col lg:flex-row gap-8 mt-2'>
                 {internships.map(item=> {
                     return (
                         <InternshipPreview key={item._id} data={item} />

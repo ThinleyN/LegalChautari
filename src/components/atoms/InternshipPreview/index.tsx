@@ -13,7 +13,7 @@ const InternshipPreview: React.FC<InternshipProps> = ({ data }) => {
     return (
         <div 
         // href={`/internship/${slug?.current}`} 
-        className="w-1/3 group duration-300 transition-all hover:scale-[1.02] cursor-pointer">
+        className="w-full lg:w-1/3 group duration-300 transition-all hover:scale-[1.02] cursor-pointer">
             <div className="h-72 w-full relative">
                 <SanityImage src={image} alt={title}/>
             </div>

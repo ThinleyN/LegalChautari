@@ -1,6 +1,8 @@
 import AboutSectionOne from "@/components/About/AboutSectionOne";
 import AboutSectionTwo from "@/components/About/AboutSectionTwo";
 import Breadcrumb from "@/components/Common/Breadcrumb";
+import MeetTheTeam from "@/components/organisms/MeetTheTeam";
+import VisionMission from "@/components/organisms/VisionMission";
 
 import { Metadata } from "next";
 
@@ -14,11 +16,11 @@ const AboutPage = () => {
   return (
     <>
       <Breadcrumb
-        pageName="About Page"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero."
+        pageName="About Us"
+        description="Legal Chautari is a knowledge-sharing and community paltform bridging legal education and practice."
       />
-      <AboutSectionOne />
-      <AboutSectionTwo />
+    <VisionMission />
+    <MeetTheTeam />
     </>
   );
 };

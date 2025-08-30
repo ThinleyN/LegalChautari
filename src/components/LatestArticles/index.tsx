@@ -10,7 +10,7 @@ const LatestArticles = async () => {
                     Latest Articles
                 </h2>
                 <hr className='mb-5'></hr>
-                <div className='flex gap-8 mt-2'>
+                <div className='flex flex-col lg:flex-row gap-8 mt-2'>
                     {fetchedArticles.map(item=> {
                         return (
                             <ArticlePreview 

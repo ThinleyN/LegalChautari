@@ -1,5 +1,5 @@
 // sanity.js
-import { Article, Internship } from '@/types/sanityTypes';
+import { Article, Internship, TeamMember } from '@/types/sanityTypes';
 import {createClient} from '@sanity/client'
 import imageUrlBuilder from '@sanity/image-url';
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
@@ -41,6 +41,11 @@ export async function getArticle(slug:string) {
 export async function getInternships() {
   const internships: Internship[] = await client.fetch('*[_type == "internship"]')
   return internships;
+}
+
+export async function getTeamMembers() {
+  const teamMembers: TeamMember[] =  await client.fetch('*[_type == "teamMember"]');
+  return teamMembers;
 }
 
 
