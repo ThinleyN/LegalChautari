@@ -16,25 +16,25 @@ const menuData: Menu[] = [
   {
     id: 33,
     title: "News & Journal",
-    path: "/blog",
+    path: "/newsjournal",
     newTab: false,
   },
   {
     id: 3,
     title: "Career Hub",
-    path: "/contact",
+    path: "/contactus",
     newTab: false,
   },
   {
     id: 4,
     title: "Events & Forum",
-    path: "/contact",
+    path: "/events",
     newTab: false,
   },
   {
     id: 5,
     title: "Chautari Index",
-    path: "/contact",
+    path: "/chautariindex",
     newTab: false,
   },
   // {
