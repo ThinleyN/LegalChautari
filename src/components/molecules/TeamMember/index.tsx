@@ -5,8 +5,7 @@ interface TeamMemberProps {
     data: TeamMember
 }
 
-const TeamMember = ({data}: TeamMemberProps) => {
-    console.log(data,"Dataa")
+const TeamMembers = ({data}: TeamMemberProps) => {
     return (
         <div className="w-1/3 flex flex-wrap gap-3 border justify-center">
             <div className="w-2/4 flex justify-center rounded-full aspect-square relative overflow-hidden">
@@ -17,4 +16,4 @@ const TeamMember = ({data}: TeamMemberProps) => {
     )
 };
 
-export default TeamMember;
+export default TeamMembers;
