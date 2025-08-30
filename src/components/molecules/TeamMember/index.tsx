@@ -1,5 +1,6 @@
 import SanityImage from "@/components/atoms/SanityImage";
 import { TeamMember } from "@/types/sanityTypes";
+import { RichTextViewer } from "../RichTextViewer";
 
 interface TeamMemberProps {
     data: TeamMember
@@ -7,9 +8,14 @@ interface TeamMemberProps {
 
 const TeamMembers = ({data}: TeamMemberProps) => {
     return (
-        <div className="w-1/3 flex flex-wrap gap-3 border justify-center">
+        <div className="p-4 w-1/3 flex flex-col items-center flex-wrap gap-5 border justify-center">
             <div className="w-2/4 flex justify-center rounded-full aspect-square relative overflow-hidden">
                 <SanityImage src={data.image} alt={data.fullName}/>
+            </div>
+            <div className="text-center">
+                <p>{data.fullName}</p>
+                <RichTextViewer value={data.intro}></RichTextViewer>
+                <p>{data.email}</p>
             </div>
 
         </div>

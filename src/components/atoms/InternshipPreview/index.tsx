@@ -17,7 +17,7 @@ const InternshipPreview: React.FC<InternshipProps> = ({ data }) => {
             <div className="h-72 w-full relative">
                 <SanityImage src={image} alt={title}/>
             </div>
-            <h2 className="my-2 font-bold text-2xl group-hover:underline">{title}</h2>
+            <h3 className="text-xl my-2 font-bold group-hover:underline">{title}</h3>
             <span className="text-gray">{shortDescription}</span>
         </div>
     );

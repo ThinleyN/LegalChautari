@@ -8,7 +8,7 @@ const LatestArticles = async () => {
     return (
         <div className=''>
             <div className='container py-12 light:bg-primary'>
-                <h2 className='text-4xl mb-6 font-bold ' >
+                <h2 className='!text-4xl mb-6 font-bold ' >
                     Latest Articles
                 </h2>
                 <hr className='mb-5'></hr>

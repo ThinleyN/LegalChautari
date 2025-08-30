@@ -8,7 +8,7 @@ const InternshipOfTheWeek = async() => {
     console.log(internships, "inter")
     return (
         <div className='container py-12'>
-            <h2 className='text-4xl mb-6 font-bold'>
+            <h2 className='!text-4xl mb-6 font-bold'>
                 Intership of the Week
             </h2>
             <hr className='mb-5'></hr>
