@@ -8,7 +8,7 @@ interface TeamMemberProps {
 
 const TeamMembers = ({data}: TeamMemberProps) => {
     return (
-        <div className="p-4 w-1/3 flex flex-col items-center flex-wrap gap-5 border justify-center">
+        <div className="p-4 lg:w-1/3 flex flex-col items-center flex-wrap gap-5 border justify-center">
             <div className="w-2/4 flex justify-center rounded-full aspect-square relative overflow-hidden">
                 <SanityImage src={data.image} alt={data.fullName}/>
             </div>
