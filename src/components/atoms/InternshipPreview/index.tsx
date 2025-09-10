@@ -9,7 +9,6 @@ interface InternshipProps {
 
 const InternshipPreview: React.FC<InternshipProps> = ({ data }) => {
     const {_id, title, image, shortDescription, slug} = data;
-    console.log(data,"Dataa")
     return (
         <div 
         // href={`/internship/${slug?.current}`} 

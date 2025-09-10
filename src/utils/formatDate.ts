@@ -12,6 +12,16 @@ export function formatDate(isoString: string) {
     .replace("AM", "am")    // lowercase am
     .replace("PM", "pm");   // lowercase pm
   }
+
+
+export function formatDateWithoutTime(isoString: string) {
+  const date = new Date(isoString);
+  return date.toLocaleString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  })
+}
   
   console.log(formatDate("2025-08-27T18:27:46.962Z"));
   // "Aug 27 2025 6:27pm"

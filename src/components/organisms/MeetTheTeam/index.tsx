@@ -11,7 +11,7 @@ const MeetTheTeam = async () => {
                 <div className="flex lg:flex-row flex-col gap-8 mt-4">
                     {teamMembers.map(item => {
                         return(
-                            <TeamMember data={item} />
+                            <TeamMember key={item._id} data={item} />
                         )
                     })}
                 </div>

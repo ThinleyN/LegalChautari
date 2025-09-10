@@ -5,7 +5,6 @@ export const revalidate = 0;
 
 const InternshipOfTheWeek = async() => {
     const internships = await getInternships();
-    console.log(internships, "inter")
     return (
         <div className='container py-12'>
             <h2 className='!text-4xl mb-6 font-bold'>

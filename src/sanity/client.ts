@@ -1,5 +1,5 @@
 // sanity.js
-import { Article, Internship, TeamMember } from '@/types/sanityTypes';
+import { Article, Internship, TeamMember, Webinar } from '@/types/sanityTypes';
 import {createClient} from '@sanity/client'
 import imageUrlBuilder from '@sanity/image-url';
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
@@ -30,6 +30,24 @@ export async function getArticles() {
   return articles;
 }
 
+export async function getFeaturedArticle() {
+  const documents = await client.fetch(  `*[_type == "featuredArticles"]{
+    items[]->{
+      _id,
+      title,
+      slug,
+      description,
+      image,
+      publishedAt,
+      excerpt,
+      body
+      // add any other fields you need from the article
+    }
+  }`);
+  console.log(documents,"documetn")
+  return documents[0].items as Article[];
+}
+
 export async function getArticle(slug:string) {
   const article: Article= await client.fetch(
     `*[_type == "article" && slug.current == $slug][0]`,
@@ -46,6 +64,19 @@ export async function getInternships() {
 export async function getTeamMembers() {
   const teamMembers: TeamMember[] =  await client.fetch('*[_type == "teamMember"]');
   return teamMembers;
+}
+
+export async function getWebinar() {
+  const webinars: Webinar[] =  await client.fetch('*[_type == "webinar"]');
+  return webinars;
+}
+
+export async function getIndividualWebinar(slug:string) {
+  const article: Webinar = await client.fetch(
+    `*[_type == "webinar" && slug.current == $slug][0]`,
+    { slug }
+  );
+  return article;
 }
 
 

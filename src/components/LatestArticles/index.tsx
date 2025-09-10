@@ -1,10 +1,11 @@
 import ArticlePreview from '@/components/ArticlePreview';
-import { getArticles } from '@/sanity/client';
+import { getFeaturedArticle } from '@/sanity/client';
 
 export const revalidate = 0;
 
 const LatestArticles = async () => {
-    const fetchedArticles = await getArticles();
+    const fetchedArticles = await getFeaturedArticle();
+    console.log(fetchedArticles, "feature")
     return (
         <div className=''>
             <div className='container py-12 light:bg-primary'>
