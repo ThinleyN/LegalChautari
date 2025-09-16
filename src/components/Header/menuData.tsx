@@ -22,7 +22,21 @@ const menuData: Menu[] = [
   {
     id: 3,
     title: "Career Hub",
-    path: "/contactus",
+    // path: "/contactus",
+    submenu: [
+      {
+        id: 41,
+        title: "Internship & Jobs",
+        path: "/internship-jobs",
+        newTab: false,
+      },
+      {
+        id: 41,
+        title: "Bar Council",
+        path: "/bar-council",
+        newTab: false,
+      }
+    ],
     newTab: false,
   },
   {

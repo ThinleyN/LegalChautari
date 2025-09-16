@@ -56,10 +56,30 @@ export async function getArticle(slug:string) {
   return article;
 }
 
+// export async function getInternships() {
+//   const internships: Internship[] = await client.fetch('*[_type == "internship"]')
+//   return internships;
+// }
+
 export async function getInternships() {
-  const internships: Internship[] = await client.fetch('*[_type == "internship"]')
-  return internships;
+  const query = `
+  *[_type == "internship" && !(_id in path('drafts.**'))]
+  | order(publishedAt desc) {
+    ...,                                   // ← all fields as-is
+    "slug": slug.current,                  // flatten slug
+    "industry": industry->{
+      _id, title, "value": coalesce(value.current, slug.current, _id)
+    },
+    "employer": employer->{
+      _id, title, "value": coalesce(value.current, slug.current, _id)
+    },
+    image{
+      ..., "url": asset->url               // quick CDN URL (optional)
+    }
+  }`;
+  return client.fetch(query);
 }
+
 
 export async function getTeamMembers() {
   const teamMembers: TeamMember[] =  await client.fetch('*[_type == "teamMember"]');
@@ -79,4 +99,78 @@ export async function getIndividualWebinar(slug:string) {
   return article;
 }
 
+export async function getJobLocation() {
+  const query = `
+    array::unique(*[_type == "internship" && defined(location)].location)
+    | order(@ asc)
+  `;
+  const location = await client.fetch<string[]>(query);
+
+  // const sectorQuery = `
+  // *[
+  //   _type == "statusOption"
+  //   && !(_id in path('drafts.**'))
+  //   && count(*[_type == "internship" && !(_id in path('drafts.**')) && references(^._id)]) > 0
+  // ]
+  // | order(title asc){
+  //   _id,
+  //   title,
+  //   "value": coalesce(value.current, slug.current, _id),
+  //   "usageCount": count(*[_type == "internship" && !(_id in path('drafts.**')) && references(^._id)])
+  // }
+  // `;
+  // const sectors = await client.fetch(sectorQuery);
+
+  const sectorAndEmployerQuery = `
+  {
+    "industries": *[
+      _type == "statusOption"
+      && !(_id in path('drafts.**'))
+      && count(*[
+        _type == "internship"
+        && !(_id in path('drafts.**'))
+        && defined(industry) 
+        && industry._ref == ^._id
+      ]) > 0
+    ]
+    | order(title asc){
+      _id,
+      title,
+      "value": coalesce(value.current, slug.current, _id),
+      "count": count(*[
+        _type == "internship" 
+        && !(_id in path('drafts.**')) 
+        && industry._ref == ^._id
+      ])
+    },
+  
+    "employers": *[
+      _type == "statusOption"
+      && !(_id in path('drafts.**'))
+      && count(*[
+        _type == "internship"
+        && !(_id in path('drafts.**'))
+        && defined(employer) 
+        && employer._ref == ^._id
+      ]) > 0
+    ]
+    | order(title asc){
+      _id,
+      title,
+      "value": coalesce(value.current, slug.current, _id),
+      "count": count(*[
+        _type == "internship" 
+        && !(_id in path('drafts.**')) 
+        && employer._ref == ^._id
+      ])
+    }
+  }
+  
+  `;
+  const sectoreAndEmployer = await client.fetch(sectorAndEmployerQuery);
+
+  console.log(sectoreAndEmployer, "jhiottt")
+
+  return {location, employers: sectoreAndEmployer.employers, industries: sectoreAndEmployer.industries};
+}
 

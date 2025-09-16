@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@material-tailwind/react": "^2.1.10",
     "@portabletext/react": "^4.0.1",
     "@sanity/client": "^7.10.0",
     "@sanity/functions": "^1.0.3",
