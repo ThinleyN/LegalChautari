@@ -14,6 +14,6 @@ interface Props {
 
 export default function Dropdown({options, onChange,instanceId }:Props) {
   return (
-    <Select instanceId={instanceId} options={options} onChange={onChange} className='text-primary' />
+    <Select instanceId={instanceId} options={options} onChange={onChange} className='text-dark' />
   );
 }
