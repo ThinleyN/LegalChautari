@@ -13,6 +13,21 @@
  */
 
 // Source: schema.json
+export type FeaturedArticles = {
+  _id: string
+  _type: 'featuredArticles'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  items: Array<{
+    _ref: string
+    _type: 'reference'
+    _weak?: boolean
+    _key: string
+    [internalGroqTypeReferenceTo]?: 'article'
+  }>
+}
+
 export type Webinar = {
   _id: string
   _type: 'webinar'
@@ -95,7 +110,7 @@ export type TeamMember = {
   _rev: string
   fullName: string
   email: string
-  image?: {
+  image: {
     asset?: {
       _ref: string
       _type: 'reference'
@@ -136,7 +151,7 @@ export type Internship = {
   title: string
   slug: Slug
   publishedAt: string
-  image?: {
+  image: {
     asset?: {
       _ref: string
       _type: 'reference'
@@ -149,6 +164,30 @@ export type Internship = {
     _type: 'image'
   }
   shortDescription: string
+  location: string
+  deadline: string
+  industry: {
+    _ref: string
+    _type: 'reference'
+    _weak?: boolean
+    [internalGroqTypeReferenceTo]?: 'statusOption'
+  }
+  employer: {
+    _ref: string
+    _type: 'reference'
+    _weak?: boolean
+    [internalGroqTypeReferenceTo]?: 'statusOption'
+  }
+}
+
+export type StatusOption = {
+  _id: string
+  _type: 'statusOption'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  title: string
+  value: Slug
 }
 
 export type Article = {
@@ -159,6 +198,22 @@ export type Article = {
   _rev: string
   title: string
   slug: Slug
+  categories?:
+    | 'Advice'
+    | 'Analysis'
+    | 'Blogs'
+    | 'Comment'
+    | 'Feature'
+    | 'In-depth'
+    | 'Interview'
+    | 'Morning round-up'
+    | 'News'
+    | 'Podcast'
+    | 'Research'
+    | 'Review'
+    | 'Review'
+    | 'Survey'
+    | 'Video'
   publishedAt: string
   image?: {
     asset?: {
@@ -342,9 +397,11 @@ export type SanityAssetSourceData = {
 }
 
 export type AllSanitySchemaTypes =
+  | FeaturedArticles
   | Webinar
   | TeamMember
   | Internship
+  | StatusOption
   | Article
   | SanityImagePaletteSwatch
   | SanityImagePalette

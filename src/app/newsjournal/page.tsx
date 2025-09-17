@@ -19,10 +19,10 @@ const NewsJournal = () => {
     const params = useParams();
     const router = useRouter();
 
-    const [articles, setArticles] = useState([]);
-    const [categories, setCategories] = useState([]);
+    const [articles, setArticles] = useState([] as any);
+    const [categories, setCategories] = useState([] as any);
     const [searchParams, setSearchParams] = useState({} as SearchParam);
-    const [filteredArticles, setFilteredArticles] = useState([]);
+    const [filteredArticles, setFilteredArticles] = useState([] as any);
 
     const fetchedArticles = async () => {
         const articles = await axios.get('/api/articles');

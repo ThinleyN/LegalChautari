@@ -4,7 +4,7 @@ export const FooterLinks = ({children, href}) => {
     return (
         <Link
             href={href}
-            className="mb-4 inline-block text-base text-body-color duration-300 hover:text-black dark:text-body-color-dark dark:hover:text-white"
+            className="mb-4 inline-block text-base duration-300 hover:text-gray dark:text-body-color-dark dark:hover:text-white"
         >
             {children}
         </Link>

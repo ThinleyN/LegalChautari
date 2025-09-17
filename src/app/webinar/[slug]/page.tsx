@@ -26,7 +26,9 @@ export default async function Page({
                 <h1 className="text-5xl font-bold mb-5">{webinar.title}</h1>
                 <div className="flex italic gap-1">
                     <p>Date:</p>
-                    <p className="italic">{formatDateWithoutTime(webinar.date)}</p>
+                    {webinar.date && (
+                        <p className="italic">{formatDateWithoutTime(webinar.date)}</p>
+                    )}
                 </div>
                 <div className="flex italic gap-1">
                     <p>Time:</p>

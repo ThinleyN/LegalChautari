@@ -1,33 +1,32 @@
 "use client";
 
 import { Inter } from "next/font/google";
-import { Merriweather, Lato, Oswald } from "next/font/google"
+import { Merriweather, Lato, Oswald, Playfair_Display, Roboto } from "next/font/google"
 import ClientWrapper from "@/components/organisms/ClientWrapper";
 import "../styles/index.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 // Heading font
-const merriweather = Merriweather({
+const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "700"], // regular + bold
-  variable: "--font-merriweather",
-})
-
-// Body font
-const lato = Lato({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-lato",
+  variable: "--font-heading",
 })
 
 // Accent font
-const oswald = Oswald({
+const robotoFont = Roboto({
   subsets: ["latin"],
-  weight: ["400", "600"], // adjust as needed
-  variable: "--font-oswald",
+    weight: ["400", "700"],
+    variable: "--font-accent",
 })
 
+//Body font
+// const oswald = Oswald({
+//   subsets: ["latin"],
+//   weight: ["400", "600"], // adjust as needed
+//   variable: "--font-body",
+// })
 
 export default function RootLayout({
   children,
@@ -42,7 +41,7 @@ export default function RootLayout({
       */}
       <head />
 
-      <body className={`bg-[#F2F2F2] dark:bg-black ${inter.className} ${oswald.className} ${lato.className} ${merriweather.className}`}>
+      <body className={`bg-[#f8f9fa] dark:bg-black ${inter.className} ${robotoFont.className} ${playfairDisplay.variable}`}>
         <ClientWrapper>
           {children}
         </ClientWrapper>

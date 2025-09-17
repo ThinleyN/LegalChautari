@@ -7,8 +7,8 @@ const LatestArticles = async () => {
     const fetchedArticles = await getFeaturedArticle();
     console.log(fetchedArticles, "feature")
     return (
-        <div className=''>
-            <div className='container py-12 light:bg-primary'>
+        <div className='bg-white'>
+            <div className='container py-12 '>
                 <h2 className='!text-4xl mb-6 font-bold ' >
                     Latest Articles
                 </h2>

@@ -27,17 +27,16 @@ export const InternshipSidebar = ({industries,employers,locations}: Props) => {
         <aside className="w-[30%] bg-gray-dark text-white p-5 pb-12 rounded-xl">
             <div>
                 <Accordion 
-                    open={open.a} 
+                    open={open.a}
                     placeholder={undefined} 
-                    // onPointerEnterCapture={undefined} 
+                     onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                    // onPointerEnterCapture={undefined} 
                     // onPointerLeaveCapture={undefined}
                 >
                     <AccordionHeader 
-                        className="text-3xl font-bold cursor-pointer" 
-                        onClick={() => handleOpen('a')} 
-                        children={'Sectors'} 
-                        placeholder={undefined} 
-                        // onPointerEnterCapture={undefined} 
+                        className="text-3xl font-bold cursor-pointer"
+                        onClick={() => handleOpen('a')}
+                        children={'Sectors'}
+                        placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                        // onPointerEnterCapture={undefined} 
                         // onPointerLeaveCapture={undefined}
                         >
                     </AccordionHeader>
@@ -60,17 +59,16 @@ export const InternshipSidebar = ({industries,employers,locations}: Props) => {
                 </Accordion>
                 
                 <Accordion 
-                    open={open.b} 
+                    open={open.b}
                     placeholder={undefined} 
-                    // onPointerEnterCapture={undefined} 
+                    onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                    // onPointerEnterCapture={undefined} 
                     // onPointerLeaveCapture={undefined}
                 >
                      <AccordionHeader 
-                        className="text-3xl font-bold cursor-pointer" 
-                        onClick={() => handleOpen('b')} 
-                        children={'Employers'} 
-                        placeholder={undefined} 
-                        // onPointerEnterCapture={undefined} 
+                        className="text-3xl font-bold cursor-pointer"
+                        onClick={() => handleOpen('b')}
+                        children={'Employers'}
+                        placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                        // onPointerEnterCapture={undefined} 
                         // onPointerLeaveCapture={undefined}
                         >
                     </AccordionHeader>
@@ -88,17 +86,15 @@ export const InternshipSidebar = ({industries,employers,locations}: Props) => {
 
 
                 <Accordion 
-                    open={open.c} 
-                    placeholder={undefined} 
-                    // onPointerEnterCapture={undefined} 
+                    open={open.c}
+                    placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                    // onPointerEnterCapture={undefined} 
                     // onPointerLeaveCapture={undefined}
                 >
                      <AccordionHeader 
-                        className="text-3xl font-bold cursor-pointer" 
-                        onClick={() => handleOpen('c')} 
-                        children={'Location'} 
-                        placeholder={undefined} 
-                        // onPointerEnterCapture={undefined} 
+                        className="text-3xl font-bold cursor-pointer"
+                        onClick={() => handleOpen('c')}
+                        children={'Location'}
+                        placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                        // onPointerEnterCapture={undefined} 
                         // onPointerLeaveCapture={undefined}
                         >
                     </AccordionHeader>

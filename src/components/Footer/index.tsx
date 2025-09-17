@@ -6,7 +6,7 @@ import { FooterLinks } from "../atoms/FooterLinks";
 const Footer = () => {
   return (
     <>
-      <footer className="relative z-10 bg-white pt-16 dark:bg-gray-dark md:pt-20 lg:pt-24">
+      <footer className="relative z-10 bg-primary pt-16 dark:bg-gray-dark md:pt-20 lg:pt-24">
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-5/12">
@@ -14,7 +14,7 @@ const Footer = () => {
                 <Link href="/" className="mb-8 inline-block">
                   Legal Chautari
                 </Link>
-                <p className="mb-9 text-base leading-relaxed text-body-color dark:text-body-color-dark">
+                <p className="mb-9 text-base leading-relaxed">
                   Connect. Learn. Lead.
                 </p>
                 <div className="flex items-center">
@@ -23,7 +23,7 @@ const Footer = () => {
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mr-6 text-body-color duration-300 hover:text-white dark:text-body-color-dark dark:hover:text-white"
+                    className="mr-6 duration-300 hover:text-white dark:hover:text-white"
                   >
                     <svg
                       width="18"
@@ -43,7 +43,7 @@ const Footer = () => {
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mr-6 text-body-color duration-300 hover:text-white dark:text-body-color-dark dark:hover:text-white"
+                    className="mr-6 duration-300 hover:text-white dark:hover:text-white"
                   >
                     <svg
                       width="18"
@@ -65,7 +65,7 @@ const Footer = () => {
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mr-6 text-body-color duration-300 hover:text-white dark:text-body-color-dark dark:hover:text-white"
+                    className="mr-6 duration-300 hover:text-white dark:hover:text-white"
                   >
                     <svg
                       width="18"
@@ -81,7 +81,7 @@ const Footer = () => {
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-body-color duration-300 hover:text-white dark:text-body-color-dark dark:hover:text-white"
+                    className="text-body-color duration-300 hover:text-white dark:hover:text-white"
                   >
                     <svg
                       width="17"
@@ -206,7 +206,7 @@ const Footer = () => {
 
           <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]"></div>
           <div className="py-8">
-            <p className="text-center text-base text-body-color dark:text-white">
+            <p className="text-center text-base dark:text-white">
               © {new Date().getFullYear()} Legal Chautari. All rights reserved.
             </p>
           </div>

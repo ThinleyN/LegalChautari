@@ -25,11 +25,13 @@ export const InternshipList = ({internships}: Props) => {
                         </div>
                         <div className="flex mt-3">
                             <div className="relative w-24 h-24 mr-5">
-                                <SanityImage src={item.image} alt={item.slug} className="object-cover"/>
+                                {item.image && (
+                                    <SanityImage src={item.image} alt={item.slug.current} className="object-cover"/>
+                                )}
                             </div>
                             <div>
                                 <div className="">
-                                    {item.employer.title}
+                                    {/* {item.employer.title} */}
                                 </div>
                                 <div className="flex gap-3 items-center mt-2">
                                     <IoLocationOutline />

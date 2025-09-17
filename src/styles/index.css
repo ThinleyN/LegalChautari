@@ -14,12 +14,16 @@ layer(base);
   --breakpoint-xl: 1200px;
   --breakpoint-2xl: 1400px;
 
+  --color-primary: #FDE2B3;
+  --color-dark: #000;
+
+
   --color-current: currentColor;
   --color-transparent: transparent;
   --color-white: #ffffff;
   --color-black: #121723;
-  --color-dark: #F7FAFC;
-  --color-primary: #1B2A4E;
+  /* --color-dark: #F7FAFC; */
+  /* --color-primary: #1B2A4E; */
   --color-yellow: #fbb040;
   --color-bg-color-dark: #171c28;
 
@@ -59,13 +63,14 @@ layer(base);
   --shadow-btn-light: 0px 1px 2px rgba(0, 0, 0, 0.1);
 
   --drop-shadow-three: 0px 5px 15px rgba(6, 8, 15, 0.05);
+
 }
 
 @theme {
   /* Map your custom families to Tailwind utilities (font-*) */
-  --font-heading: var(--font-merriweather), ui-serif, Georgia, "Times New Roman", serif;
-  --font-body: var(--font-lato), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-  --font-accent: var(--font-oswald), ui-sans-serif, system-ui, Arial, sans-serif;
+  /* --font-heading: var(--font-playfair), ui-serif, Georgia, "Times New Roman", serif; */
+  /* --font-body: var(--font-lato), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  --font-accent: var(--font-oswald), ui-sans-serif, system-ui, Arial, sans-serif; */
 
   /* (optional) set default sizes/weights if you want */
   /* --text-xxl: 2.25rem; etc... */
@@ -149,6 +154,11 @@ layer(base);
 
 html, body {
   font-family: var(--font-body);
+  color: var(--color-dark);
+}
+
+h1, h2 {
+  font-family: var;
 }
 
 h1, h2, h3, h4, h5 {
